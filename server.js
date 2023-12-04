@@ -16,10 +16,11 @@ app.use(cors({
 }));
 
 const connection = mysql.createConnection({
-  host: 'localhost',
+  host: 'roundhouse.proxy.rlwy.net',
   user: 'root',
-  password: 'acesso123',
+  password: 'b2ChHH5-c6GHdDh3HhaD464E1Db2G2Eh',
   database: 'new',
+  port: '26841'
 });
 
 connection.connect((err) => {
@@ -72,8 +73,8 @@ app.get('/escolas', (req, res) => {
   });
 });
 
-// Substitua 'seu_endereco_ip' pelo endereço IP da sua máquina
-const ipAddress = '172.16.31.21';
+// Use 0.0.0.0 to listen on all available network interfaces
+const ipAddress = '0.0.0.0';
 
 app.listen(port, ipAddress, () => {
   console.log(`Servidor rodando em http://${ipAddress}:${port}`);
